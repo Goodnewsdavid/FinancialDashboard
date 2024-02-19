@@ -20,7 +20,7 @@ function App() {
           <Header />
           <Welcome />
           <Overview />
-          <div style={style.flex__wrap}>
+          <div style={style.flex__wrap} className="class_flex_justify">
             <div>
               <LineChart />
             </div>
@@ -28,15 +28,13 @@ function App() {
               <CardExp />
             </div>
           </div>
-          <div style={style.flex__wrap}>
-            
-              <PaymentHis />
-            
-           
-              <BarChart />
-            </div>
+          <div style={style.flex__wrap} className="class_flex_justify">
+            <PaymentHis />
+
+            <BarChart />
           </div>
         </div>
+      </div>
     </>
   );
 }
@@ -57,6 +55,7 @@ const style = {
     display: "flex",
     flexWrap: "wrap",
     width: "100%",
+    marginBottom: "20px",
     // alignItems: "stretch",
   },
 };

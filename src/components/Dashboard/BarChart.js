@@ -1,4 +1,5 @@
 import React from "react";
+import "../../index.css";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -68,17 +69,18 @@ export const data = {
 
 function BarChart() {
   return (
-    <div style={styles.line__container}>
-       <Bar options={options} data={data} />;
+    <div style={styles.line__container} className="line_container">
+      <Bar options={options} data={data} />;
     </div>
   );
 }
 
 const styles = {
   line__container: {
-    width: "56%",
+    width: "50%",
+    height: "380px",
     backgroundColor: "#fff",
-    marginRight: "10px",
+    marginLeft: "15px",
     padding: "10px",
     borderRadius: "6px",
   },

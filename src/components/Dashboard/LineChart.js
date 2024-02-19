@@ -1,4 +1,5 @@
 import React from "react";
+import "../../index.css";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -61,54 +62,24 @@ export const data = {
   ],
 };
 
-
 function LineChart() {
   return (
-    
-      <div style={styles.line_container}>
-        <Line options={options} data={data} />
-      </div>
-
-    
+    <div style={styles.line_container} className="line_container">
+      <Line options={options} data={data} />
+    </div>
   );
 }
 
 const styles = {
-
   line_container: {
     width: "680px",
-    // height: "100%",
+    height: "100%",
     backgroundColor: "#fff",
     marginRight: "10px",
-    marginLeft:"10px",
+    marginLeft: "10px",
     padding: "10px",
     borderRadius: "6px",
   },
-
-  expenses__card: {
-    width: "360px",
-    // position: relative;
-    marginBottom: "30px",
-    boxShadow:
-      "rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px",
-    background: "rgb(255, 255, 255)",
-    padding: "20px",
-    borderRadius: "6px",
-  },
-
-  expense__content: {
-    marginTop: "40px",
-
-    width: "100%",
-  },
-
-  list__item: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-
-
 };
 
 export default LineChart;

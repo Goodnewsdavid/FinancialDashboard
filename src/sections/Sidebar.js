@@ -1,18 +1,17 @@
 import React from "react";
 import { useState } from "react";
 import { SideNav } from "../utils/helpers";
-
+import "../index.css";
 
 function Sidebar() {
-  const [isHovering, setIsHovering] = useState('');
- 
+  const [isHovering, setIsHovering] = useState("");
 
   const handleMouseOver = (name) => {
     const selectedNav = name;
-      setIsHovering(selectedNav)
-      setTimeout(()=>{
-        setIsHovering('');
-      }, 3000)
+    setIsHovering(selectedNav);
+    setTimeout(() => {
+      setIsHovering("");
+    }, 3000);
   };
 
   return (
@@ -22,18 +21,22 @@ function Sidebar() {
       </a>
 
       <ul style={style.main_nav_bar}>
-      {SideNav.map((list, index)=>{
-     return (<li key={index} style={style.inner_nav_bar}  
-      onMouseEnter={() =>handleMouseOver(list.name.toLowerCase())}
-      >
-     <a
-       herf=""
-       style={style.tooltip}>
-       {list.icon}
-       {isHovering === list.name.toLowerCase() && <span style={style.tootiptext}>{list.name}</span>}
-     </a>
-   </li>)
-   })}
+        {SideNav.map((list, index) => {
+          return (
+            <li
+              key={index}
+              style={style.inner_nav_bar}
+              onMouseEnter={() => handleMouseOver(list.name.toLowerCase())}
+            >
+              <a herf="" style={style.tooltip}>
+                {list.icon}
+                {isHovering === list.name.toLowerCase() && (
+                  <span style={style.tootiptext}>{list.name}</span>
+                )}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
@@ -60,7 +63,7 @@ const style = {
   inner_nav_bar: {
     listStyle: "none",
     // width:"80px",
-    padding:"25px",
+    padding: "25px",
     cursor: "pointer",
     // fontSize: "13px",
     fontWeight: "600",
@@ -70,12 +73,12 @@ const style = {
     position: "relative",
     display: "inline-block",
     cursor: "default",
-    fontSize:"20px"
+    fontSize: "20px",
   },
 
   tootiptext: {
     padding: "8px 15px",
-    fontSize:"14px",
+    fontSize: "14px",
     backgroundColor: "#fff",
     color: "rgb(47, 44, 216)",
     textAlign: "center",
@@ -86,7 +89,7 @@ const style = {
     left: "40px",
     top: "0",
     zIndex: "1",
-   
+
     transitionDelay: "0.5s",
   },
 };

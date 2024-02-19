@@ -1,11 +1,15 @@
 import React from "react";
+import "../index.css";
 
 function Overview() {
   return (
     <div className="container_card">
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "25px" }}>
+      <div
+        className="inner__container__card class_flex_justify"
+        style={{ display: "flex", flexWrap: "wrap", gap: "18px" }}
+      >
         <div style={style.card}>
-          <div style={{color:"color: #1f2c73"}}>Total Balance</div>
+          <div style={{ color: "color: #1f2c73" }}>Total Balance</div>
           <div style={style.amount}>$ 432568</div>
           <p style={style.months}>2.47% Last month $24,478</p>
         </div>
@@ -45,7 +49,7 @@ const style = {
     fontSize: "28px",
     margin: "20px 0px",
     fontWeight: "600",
-    color: "#1f2c73"
+    color: "#1f2c73",
   },
 
   months: {

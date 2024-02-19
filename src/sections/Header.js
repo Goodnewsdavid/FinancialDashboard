@@ -6,15 +6,23 @@ import { FiBell } from "react-icons/fi";
 
 function Header() {
   return (
-    <div style={style.header__content}>
-      <div style={style.header__left}>
+    <div style={style.header__content} className="header__content">
+      <div style={style.header__left} className="header_input">
         <input name="" placeholder="Search Here" style={style.input} />
-        <span style={style.searchIcon}>
+        <span style={style.searchIcon} className="header__icon">
           <FaSearch />
         </span>
       </div>
-      <div style={style.header__right}>
-        <span style={{ cursor:"pointer", marginRight: "20px", paddingTop:"10px", color:"rgb(113, 132, 173)", fontSize:"24px" }}>
+      <div style={style.header__right} className="header__right">
+        <span
+          style={{
+            cursor: "pointer",
+            marginRight: "20px",
+            paddingTop: "10px",
+            color: "rgb(113, 132, 173)",
+            fontSize: "24px",
+          }}
+        >
           <FiBell />
         </span>
         <span
@@ -108,7 +116,7 @@ const style = {
     display: "flex",
     justifyContent: "center",
     alignItem: "center",
-    cursor:"pointer"
+    cursor: "pointer",
   },
 };
 

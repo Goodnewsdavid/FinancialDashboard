@@ -1,15 +1,47 @@
-import React from 'react'
-import { Expenses } from '../../utils/cardItem'
+import React from "react";
+import { Expenses } from "../../utils/cardItem";
+import "../../index.css";
 
 function CardExp() {
   return (
-    <div style={styles.expenses__card}>
-          <div style={{ fontWeight: "600", fontSize: "20px" }}>
-            Monthly Expenses Breakdown
+    <div style={styles.expenses__card} className="expenses__card">
+      <div
+        style={{ fontWeight: "600", fontSize: "20px" }}
+        className="card__header"
+      >
+        Monthly Expenses Breakdown
+      </div>
+
+      <div style={styles.expense__content}>
+        <div style={styles.list__item}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <p
+              style={{
+                background: "red",
+                width: "10px",
+                height: "10px",
+                borderRadius: "50px",
+                marginRight: " 7px",
+              }}
+            ></p>
+            <p style={{ color: "rgb(113, 132, 173)" }}>Food</p>
           </div>
-          
-          <div style={styles.expense__content}>
-            <div style={styles.list__item}>
+          <div>
+            <span style={{ marginRight: "19px", color: "rgb(113, 132, 173)" }}>
+              $1200
+            </span>
+            <span>38%</span>
+          </div>
+        </div>
+        {Expenses.map((item, id) => {
+          return (
+            <div style={styles.list__item} key={id} className="border__top">
               <div
                 style={{
                   display: "flex",
@@ -19,67 +51,32 @@ function CardExp() {
               >
                 <p
                   style={{
-                    background: "red",
+                    background: item.backgroundColor,
                     width: "10px",
                     height: "10px",
                     borderRadius: "50px",
                     marginRight: " 7px",
                   }}
                 ></p>
-                <p style={{ color: "rgb(113, 132, 173)" }}>Food</p>
+                <p style={{ color: "rgb(113, 132, 173)" }}>{item.item}</p>
               </div>
               <div>
                 <span
                   style={{ marginRight: "19px", color: "rgb(113, 132, 173)" }}
                 >
-                  $1200
+                  {item.amount}
                 </span>
-                <span>38%</span>
+                <span>{item.percentage}</span>
               </div>
             </div>
-            {Expenses.map((item, id) => {
-                return(
-                    <div style={styles.list__item} key={id} className="border__top">
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <p
-                        style={{
-                          background: item.backgroundColor,
-                          width: "10px",
-                          height: "10px",
-                          borderRadius: "50px",
-                          marginRight: " 7px",
-                          
-                          
-                        }}
-                      ></p>
-                      <p style={{ color: "rgb(113, 132, 173)" }}>{item.item}</p>
-                    </div>
-                    <div>
-                      <span
-                        style={{ marginRight: "19px", color: "rgb(113, 132, 173)" }}
-                      >
-                        {item.amount}
-                      </span>
-                      <span>{item.percentage}</span>
-                    </div>
-                  </div>
-                )
-
-            })}
-          </div>
-
-        </div>
-  )
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 const styles = {
-    
   expenses__card: {
     width: "360px",
     // position: relative;
@@ -93,7 +90,6 @@ const styles = {
 
   expense__content: {
     marginTop: "40px",
-
     width: "100%",
   },
 
@@ -102,7 +98,6 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
   },
+};
 
-}
-
-export default CardExp
+export default CardExp;

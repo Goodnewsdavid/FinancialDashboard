@@ -1,5 +1,5 @@
 import React from "react";
-import { Expenses } from "../../utils/cardItem";
+import "../../index.css";
 
 function PaymentHis() {
   return (
@@ -160,9 +160,6 @@ function PaymentHis() {
             </p>
           </div>
         </div>
-       
-       
-        
       </div>
     </div>
   );
@@ -173,7 +170,7 @@ const styles = {
     width: "360px",
     // position: relative;
     marginBottom: "30px",
-    marginRight:"0 9px",
+    marginRight: "0 9px",
     boxShadow:
       "rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px",
     background: "rgb(255, 255, 255)",
